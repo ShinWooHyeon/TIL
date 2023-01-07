@@ -81,3 +81,202 @@ elif n==3:
     - 선: 제어의 흐름, 화살표로 방향표시
     - 단말: 외부환경으로 나가가나 외부 환경에서 들어오는 것 나타낸다. 주로 프로그램의 시작과 종료 나타낸다.
 
+### 01-2 반복하는 알고리즘
+- while 문 반복
+    - while문은 실행 전에 반복 판단, 이러한 구조를 `사전 판단 반복 구조`
+    - while 조건식: 명령문 (명령문=루프 본문)
+    - 반복을 제어할때 사용하는 i를 카운터용 변수라고 한다 
+```python
+n= int(input())
+i, s= 1,0
+while i <=n:
+    s+=i
+    i+=1
+print(s)
+# 여기서 i가 카운터용 변수 
+```
+- for 문 반복
+    - 변수가 하나만 있을 때는 while 문 보다 for문 사용이 편리
+    - range() 함수로 iterable 객체 생성할 수 있다(`iterable객체= 반복할 수 있는 객체`, 대표적으로 list,str,tuple이 있다)
+        - range(n): 0 이상 n 미만인 수를 차례로 나열하는 iterable 객체
+        - range(a,b): a이상 b 미만인 수를 차례로 나열하는 iterable 객체`
+        - rnage(a,b,step): a이상 b미만인 수를 step간격으로 나열한 iterable 객체
+```python
+n=int(input())
+s=0
+for i in range(1,n+1):
+    s+=i
+print(s)
+```
+- 연속하는 정수의 합 구하기 (수를 정렬 `a, b= b,a`이용)
+- a,b= b,a과정 detail
+    - 1. 우변의 b,a에 의해 두 값을 압축한 튜플 (b,a) 생성
+    - 2. 대입할때 튜플 (b,a)를 다시 풀어서 b,a로 만든 다음 a,b에 각각 대입
+    - 참고: a,와 b의 값을 비교하는 또다른 방법 임시변수`t` 사용
+        - 1. t=a 로 a값을 t에 저장
+        - 2. a=b 로 b값을 a에 저장
+        - 3. b=t 로 처음 a값을 b에 저장
+```python
+# 실습 1-9
+a ,b =map(int,input().split())    
+if a>b:
+    a , b = b, a
+s=0
+for i in range(a,b+1):
+    s+=i
+print(s)
+```
+- 연속하는 정수의 합과 과정 모두 구하기 (알고리즘 효율 높이기)
+```python
+# 실습 1-10
+a, b =map(int,input().split())
+if a>b:
+    a,b=b,a
+s=0
+
+for i in range (a,b+1):
+    s+=i 
+    if i <b:
+        print(f'{i} +',end='')
+    else:
+        print(f'{i} = {s}',end='')
+# 위 if문은 좋지 않다 그 이유는 if문은 1번 실행되는데 for문 전체에서 사용된다
+``` python
+# 실습 1-11
+#실습 1-11
+a, b  =map(int,input().split())
+if a>b:
+    a,b=b,a
+s=0
+for i in range(a, b):
+    s+=i
+    print(f'{i} +',end='')
+s+=b
+print(f' {b} = {s}', end='')
+```
+
+- 반복 과정에서 조건 판단하기 1(if문을 for 문 바깥으로가 포인트)
+```python
+# +- 개수만큼 출력하기
+# 실습 1-12
+n=int(input())
+if n %2==0:
+    a=((n//2))*'+-'
+    print(a)
+else:
+    a=(((n-1)//2))*'+-'
+    print(a+'+')  
+```
+- 반복 과정에서 조건 판단하기 2 (줄바꿈 고려하기)
+```python
+# 실습 1-14 1번풀이 원하는 개수만큼 줄바꿔서 출력하기
+n ,w =map(int, input().split())
+x='*' * w+'\n'
+y= x * (n//w)+'*' *(n%w) 
+print(x)
+# 실습 1-14 2번풀이
+n ,w =map(int, input().split())
+for i in range(n//w):
+    print('*' *w)
+print('*'*(n%w))
+```
+- 양수만 입력받기 (break문을 이용해서 음수 입력받을경우 )
+```python
+while True:
+    n=int(input())
+    if n>0:
+        break
+# n이 양수일때 까지 입력 계속 받을 수 있다
+```
+- 무한루프와 break 문 : 파이썬은 사후 판단 반복문 없으므로 break문 사용해서 무한루프제어
+
+- 직사각형의 넓이로 변의 길이 구하기
+```python
+# 실습 1-17- 내풀이
+n=int(input())
+for i in range(n+1):
+    for k in range(n+1):
+        if i *k==n:
+            print(f'두 변의 길이는 {i},{k} 이다.') # 이풀이는 중복 고려 x
+
+# 실습 1-17- 다른풀이
+n=int(input())
+for i in range(1,n+1):
+    if i*i >n:
+        break
+    if n% i:
+        continue # 0이면 False를 이용, 나누어 떨어질경우 0이기 때문에 continue 문 실행 x
+    print(f'두 변의 길이는 {i},{n//i}')
+```
+- for -else문 : for문이 전부 수행될경우 else문 실행, for문내에서 break문 실행시 else문 실행x
+```python
+#실습 1-18 13이 만들어질 경우 종료 
+import random
+n=int(input())
+for i in range(n):
+    a=random.randint(10,99)
+    print(f'{a}',end=' ')
+    if a==13:
+        print("\n종료")
+        break
+else:
+    print("\n13이 만들어지지 않았습니다")
+```
+- 반복문의 건너뛰기 (cotinue 구문 활용한다)
+
+- **보충학습**- 비교연산자를 연속으로 사용하는 방법과 `드모르간의 법칙`
+    - x and y와 not(not x or not y) 동일/ x or y와 not(not x and not y)와 동일
+```python
+# 보충학습 실습 1C-3
+while True:
+    n=int(input())
+    if n>=10 and n<=99: #왼쪽 조건과 if not(n<10 or n>99)와 동일하다
+        break
+    else:
+        pass
+```
+- 다중루프 (줄 바꿔서 구구단 출력) 
+``` python
+for i in range (2,10):
+    for k in range(1,10):
+        print(f'{i * k}',end=' ')
+    print()
+- 오른쪽 정렬해서 출력
+```python
+n=int(input())
+for i in range(1,n+1):
+    a='*' * i
+    print(f'{a:>{n}}')
+# 주의할점 f 포맷팅해서 정렬할 경우 문자와 달리 정렬기준 숫자 역시 포맷팅해서 적어줘야 한다 마지막 프린트 구문 집중
+```
+
+#### 보충학습 파이썬의 변수 알아보기 
+- 파이썬에서는 데이터, 함수, 클래스, 모듈 패키지 모두를 객체로 취급
+- 파이썬의 변수는 값을 가지 않는다. ,x=17은 x가 17이라는 값을 갖고 있다고 말할 수 없다
+- 변수는 객체를 참조하기 위한 객체에 연결된 이름
+- 모든 객체는 메모리를 차지하고 자료형 뿐만 아니라 식별 번호를 가진다. 
+```python
+n=17
+id(17) # 930516
+id(n)  # 930516
+```
+위 코드에서 n=17이 값을 복사하여 대입한 것이 아니다. 17이라는 int형 객체를 참조하는 n이라는 이름을 결합한것. `정수 리터럴 17의 식별번호와 n의 식별번호가 같다` 
+&nbsp;
+
+(리터럴= 값 자체 의미 정수 리터럴 7은 값 7/ 문자 리터럴 IU는 IU의 값을 가진다 )
+&nbsp;
+
+![객체변수](https://user-images.githubusercontent.com/118239192/211142820-00e4c9fd-5423-4adf-945f-a7e4d1a0e844.jpg)
+
+17이라는 int형 객체 자체가 상자이며 파이썬 변수는 값을 저장하는 상자가 아닌 단순한 이름이다. 만약 n의 값을 17이 아닌 다른값으로 바꾸면 새로운 값을 갖는 객체 생성, 그 값을 n이 참조하는 것
+```python
+n=1
+def id_():
+    x=1
+    print(f'id(x)={id(x)}')
+id(1) #930516
+id(n) #930516
+id(x) #930516
+```
+위 코드에서 변수 2개 정의, `n`은 함수 외부에서 정의된 **전역 변수**이며 `x`는 함수 내부에서 정의된 **지역 변수**이다. 하지만 1,n,x 모두 식별번호 같다. 즉 n과 x 객체 1을 참조하는 이름
+
