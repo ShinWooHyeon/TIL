@@ -32,10 +32,10 @@ SET
     last_name='Shin',
 	birthday='1998-01-09'
 WHERE
-	userid=2;
+	userid=2;_
 -- Delete Data
 DELETE FROM 
 	users
 WHERE
 	first_name= 'Beemo';
-```
+```_
