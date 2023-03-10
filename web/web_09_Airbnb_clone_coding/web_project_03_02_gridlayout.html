@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+  </head>
+  <body class="position-relative">
+    <!-- navbar -->
+    <div class="container-fluid bg-white w-100 fixed-top">
+      <div class="container">
+        <div class="container-fluid d-flex justify-content-between" style="height:65px;">
+          <a class="navbar-brand d-flex" href="https://www.airbnb.co.kr/?from_belo_click">
+            <img class="img-fluid d-none d-md-block d-lg-block d-xl-block d-xxl-block" src="img/pngwing.com.png" alt="airbnblogo1">
+            <img class="img-fluid d-block d-md-none p-2" src="img/pngwing.com_1.png" alt="airbnblogo2">
+          </a>  
+          <div class="d-inline-flex align-items-center">
+            <nav class="navbar navbar-expand-lg bg-body-white">
+              <a class="text-black me-4 text-decoration-none d-none d-md-block d-lg-block d-xl-block d-xxl-block" 
+                  href="https://www.airbnb.co.kr/host/homes?">호스팅 시작하기</a>
+              <a class="text-black me-4 text-decoration-none" href="https://www.airbnb.co.kr/signup_login">회원 가입</a>
+              <a class="text-black text-decoration-none" href="https://www.airbnb.co.kr/login">로그인</a>    
+            </nav>
+          </div>
+        </div>   
+      </div>
+    </div>
+
+    <article class="m-auto mt-5 pt-5" style="padding: 40px;">
+
+      <!-- banner + input -->
+      <section>
+        <div class="container d-md-none">
+          <!-- 검색기능 sm 이하 -->
+          <div class="text-center">
+            <strong class="fs-2 text">한국의 휴가 임대 시설</strong>
+            <p>에어비앤비에서 독특한 숙소를 예약하세요.</p>
+          </div>
+
+          <div>
+            <form class="form-floating mb-2">
+              <input type="text" class="form-control" id="floatingInputValue" placeholder="Countryname" value="한국">
+              <label for="floatingInputInvalid">위치</label>
+            </form>
+          </div>
+
+          <div class="input-group mb-2">
+            <form class="form-floating">
+              <input type="date" class="form-control" id="floatingInputValue" placeholder="date-start" value="날짜 입력">
+              <label for="floatingInputInvalid">체크인</label>
+            </form>
+            <form class="form-floating">
+              <input type="date" class="form-control" id="floatingInputValue" placeholder="date-end" value="날짜 입력">
+              <label for="floatingInputInvalid">체크아웃</label>
+            </form>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="form-floating">
+              <select class="form-select" id="floatingSelect1" aria-label="Floating label select example1">
+                <option selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+              </select>
+              <label for="floatingSelect">성인</label>
+            </div>
+            <div class="form-floating">
+              <select class="form-select" id="floatingSelect2" aria-label="Floating label select example2">
+                <option selected>0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+              </select>
+              <label for="floatingSelect">어린이</label>
+            </div>
+          </div>
+          <!-- 검색 -->
+          <div class="d-grid gap-2">
+            <button class="btn bg-danger" type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" 
+                    width="16" height="16" 
+                    fill="white" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg>
+                <span class="text-white">검색</span>
+            </button>
+          </div>
+        </div>
+        
+        <div class="container d-none d-md-block">
+          <!-- 검색기능 md이상-->
+          <div class="container border rounded-3 shadow position-absolute bg-white m-5 p-3" style="width: 420px;">
+            <div class="text-center">
+              <strong class="fs-2 text">한국의 휴가 임대 시설</strong>
+              <p>에어비앤비에서 독특한 숙소를 예약하세요.</p>
+            </div>
+
+            <div>
+              <form class="form-floating mb-2">
+                <input type="text" class="form-control" id="floatingInputValue" placeholder="Countryname" value="한국">
+                <label for="floatingInputInvalid">위치</label>
+              </form>
+            </div>
+
+            <div class="input-group mb-2">
+              <form class="form-floating">
+                <input type="date" class="form-control" id="floatingInputValue" placeholder="date-start" value="날짜 입력">
+                <label for="floatingInputInvalid">체크인</label>
+              </form>
+              <form class="form-floating">
+                <input type="date" class="form-control" id="floatingInputValue" placeholder="date-end" value="날짜 입력">
+                <label for="floatingInputInvalid">체크아웃</label>
+              </form>
+            </div>
+
+            <div>
+              <div class="input-group mb-3">
+                <div class="form-floating">
+                  <select class="form-select" id="floatingSelect1" aria-label="Floating label select example1">
+                    <option selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                  </select>
+                  <label for="floatingSelect">성인</label>
+                </div>
+                <div class="form-floating">
+                  <select class="form-select" id="floatingSelect2" aria-label="Floating label select example2">
+                    <option selected>0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                  </select>
+                  <label for="floatingSelect">어린이</label>
+                </div>
+              </div>
+              <!-- 검색 -->
+              <div class="d-grid gap-2">
+                <button class="btn bg-danger" type="button">
+                  <svg xmlns="http://www.w3.org/2000/svg" 
+                      width="16" height="16" 
+                      fill="white" class="bi bi-search" viewBox="0 0 16 16">
+                      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                  </svg>
+                  <span class="text-white">검색</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- banner image -->
+          <div class="row">
+            <div class="offset-2 col-8">
+                <img class="img-fluid rounded-2" src="https://a0.muscache.com/im/pictures/81dca5d6-5a86-49bc-8eca-4a8610a07d27.jpg?im_w=1680" alt="banner" 
+                style="margin-left: 25%; height: 500px; max-width: 100%;">
+            </div>
+          </div>
+        </div>
+        
+      </section>
+    
+
+
+      <!-- 최고 평점을 받은 한국의 휴가 숙소 -->
+      <section class="mt-5">
+        <div class="container">
+          <div>
+            <h1>최고 평점을 받은 한국의 휴가 숙소</h1>
+            <p>위치, 청결도 등에서 게스트의 높은 평가를 받은 숙소입니다.</p>
+          </div>
+          <div class="row">
+            <div class="card mb-3 col-12 col-md-4 border-0">       
+              <div class="card-img-top">
+                <p class="position-absolute bg-white rounded-2 m-2 p-1">슈퍼호스트</p>
+                <img class="img-fluid rounded-3" src="https://a0.muscache.com/im/pictures/a809a76b-311e-4c90-bce1-2a0898ad3e15.jpg?im_w=720" alt="">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">                
+                  <div class="d-flex justify-content-between">
+                  <strong>전주시 완산구의 집</strong>
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg> 4.9 (48)
+                  </span>
+                </div></h5>
+                <p class="card-text">한옥스테이 화응(花應) <br>
+                화응(花應)은 전주의 한 가운데, 완산구 태평동에 위치하고 있습니다.</p>
+              </div>
+            </div>
+
+            <div class="card mb-3 col-12 col-md-4 border-0">       
+              <div class="card-img-top">
+                <p class="position-absolute bg-white rounded-2 m-2 p-1">슈퍼호스트</p>
+                <img class="img-fluid rounded-3" src="https://a0.muscache.com/im/pictures/0092d3ff-2477-48d1-ba23-7876c9949878.jpg?im_w=720" alt="">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">                
+                  <div class="d-flex justify-content-between">
+                  <strong>영월의 게스트 별채</strong>
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg> 4.97 (514)
+                  </span>
+                </div></h5>
+                <p class="card-text">별이 보이는 감성충만 프라이빗 복층 Cosmos Room <br>
+                영월의 스테이하우스는 커플이 프라이빗하게 쉬기 좋은 객실입니다.</p>
+              </div>
+            </div>
+
+            <div class="card mb-3 col-12 col-md-4 border-0">       
+              <div class="card-img-top">
+                <p class="position-absolute bg-white rounded-2 m-2 p-1">슈퍼호스트</p>
+                <img class="img-fluid rounded-3" style="object-fit: cover;" src="https://a0.muscache.com/im/pictures/da637179-37a8-46ed-be84-e475ed399f5e.jpg?im_w=720" alt="">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">                
+                  <div class="d-flex justify-content-between">
+                  <strong>평창군의 펜션</strong>
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg> 4.97 (270)
+                  </span>
+                </div></h5>
+                <p class="card-text">대관령 양떼목장 근처 M&H 캠핑하우스<br>
+                🎙  아이들 포함 최대인원 6명까지 예약 가능합니다~</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 모든 유형의 휴가 숙소 -->
+
+      <section class="mt-5">
+        <div class="container">
+          <div>
+            <h1>모든 유형의 휴가 숙소</h1>
+            <p>충분한 공간을 제공하는 숙소를 찾아보세요.</p>
+          </div>
+          <div class="row">
+            <div class="card mb-3 col-12 col-md-4 border-0">
+              <img src="https://a0.muscache.com/im/pictures/a17609e2-d762-4365-a313-62e619e59872.jpg?im_w=720" class="card-img-top rounded-3" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">숙소</h5>
+                <p class="card-text">모든 필수품을 갖춘 편안한 숙소</p>
+              </div>
+            </div>
+
+            <div class="card mb-3 col-12 col-md-4 border-0">
+              <img src="https://a0.muscache.com/im/pictures/f20dbdb1-05b5-4f01-97ba-b113edc20795.jpg?im_w=720" class="card-img-top rounded-3" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">호텔</h5>
+                <p class="card-text">멋진 스타일의 숙소와 편의시설</p>
+              </div>
+            </div>
+
+            <div class="card mb-3 col-12 col-md-4 border-0">
+              <img src="https://a0.muscache.com/im/pictures/62d0e70e-7107-4d1b-beb5-21f0ad2bb811.jpg?im_w=720" class="card-img-top rounded-3" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">특색 있는 숙소</h5>
+                <p class="card-text">단순한 숙소 이상의 특별함이 담긴 공간</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 한국의 휴가용 임대 숙소의 인기 편의시설 -->
+
+      <section class="mt-5">
+        <div class="container">
+          <h1>한국의 휴가용 임대 숙소의 인기 편의 시설</h1>
+          <div class="d-flex flex-wrap">
+            <div class="d-flex flex-grow-1 my-2" style="width:330px;">
+              <div class="bg-white shadow rounded-3 p-2 mx-1" style="width:33%">
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-tools" viewBox="0 0 16 16">
+                <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814L1 0Zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708ZM3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026L3 11Z"/>
+                </svg>
+                <p>주방</p>
+                  
+              </div>
+              <div class="bg-white shadow rounded-3 p-2 mx-1" style="width:33%">
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-wifi" viewBox="0 0 16 16">
+                    <path d="M15.384 6.115a.485.485 0 0 0-.047-.736A12.444 12.444 0 0 0 8 3C5.259 3 2.723 3.882.663 5.379a.485.485 0 0 0-.048.736.518.518 0 0 0 .668.05A11.448 11.448 0 0 1 8 4c2.507 0 4.827.802 6.716 2.164.205.148.49.13.668-.049z"/>
+                    <path d="M13.229 8.271a.482.482 0 0 0-.063-.745A9.455 9.455 0 0 0 8 6c-1.905 0-3.68.56-5.166 1.526a.48.48 0 0 0-.063.745.525.525 0 0 0 .652.065A8.46 8.46 0 0 1 8 7a8.46 8.46 0 0 1 4.576 1.336c.206.132.48.108.653-.065zm-2.183 2.183c.226-.226.185-.605-.1-.75A6.473 6.473 0 0 0 8 9c-1.06 0-2.062.254-2.946.704-.285.145-.326.524-.1.75l.015.015c.16.16.407.19.611.09A5.478 5.478 0 0 1 8 10c.868 0 1.69.201 2.42.56.203.1.45.07.61-.091l.016-.015zM9.06 12.44c.196-.196.198-.52-.04-.66A1.99 1.99 0 0 0 8 11.5a1.99 1.99 0 0 0-1.02.28c-.238.14-.236.464-.04.66l.706.706a.5.5 0 0 0 .707 0l.707-.707z"/>
+                  </svg>
+                <p>무선 인터넷</p>
+              </div>
+              <div class="bg-white shadow rounded-3 p-2 mx-1" style="width:33%">
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-water" viewBox="0 0 16 16">
+                    <path d="M.036 3.314a.5.5 0 0 1 .65-.278l1.757.703a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.757-.703a.5.5 0 1 1 .372.928l-1.758.703a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0L.314 3.964a.5.5 0 0 1-.278-.65zm0 3a.5.5 0 0 1 .65-.278l1.757.703a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.757-.703a.5.5 0 1 1 .372.928l-1.758.703a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0L.314 6.964a.5.5 0 0 1-.278-.65zm0 3a.5.5 0 0 1 .65-.278l1.757.703a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.757-.703a.5.5 0 1 1 .372.928l-1.758.703a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0L.314 9.964a.5.5 0 0 1-.278-.65zm0 3a.5.5 0 0 1 .65-.278l1.757.703a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.757-.703a.5.5 0 1 1 .372.928l-1.758.703a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.757-.703a.5.5 0 0 1-.278-.65z"/>
+                  </svg>
+                <p>수영장</p>
+              </div>
+            </div>
+            <div class="d-flex flex-grow-1 my-2"style="width:350px;" >
+              <div class="bg-white shadow rounded-3 p-2 mx-1" style="width:45%;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-p-circle" viewBox="0 0 16 16">
+                    <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8Zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM5.5 4.002h2.962C10.045 4.002 11 5.104 11 6.586c0 1.494-.967 2.578-2.55 2.578H6.784V12H5.5V4.002Zm2.77 4.072c.893 0 1.419-.545 1.419-1.488s-.526-1.482-1.42-1.482H6.778v2.97H8.27Z"/>
+                </svg>
+                <p>건물내 무료 주차</p>
+              </div>
+              <div class="bg-white shadow rounded-3 p-2 mx-1" style="width:55%;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-snow" viewBox="0 0 16 16">
+                    <path d="M8 16a.5.5 0 0 1-.5-.5v-1.293l-.646.647a.5.5 0 0 1-.707-.708L7.5 12.793V8.866l-3.4 1.963-.496 1.85a.5.5 0 1 1-.966-.26l.237-.882-1.12.646a.5.5 0 0 1-.5-.866l1.12-.646-.884-.237a.5.5 0 1 1 .26-.966l1.848.495L7 8 3.6 6.037l-1.85.495a.5.5 0 0 1-.258-.966l.883-.237-1.12-.646a.5.5 0 1 1 .5-.866l1.12.646-.237-.883a.5.5 0 1 1 .966-.258l.495 1.849L7.5 7.134V3.207L6.147 1.854a.5.5 0 1 1 .707-.708l.646.647V.5a.5.5 0 1 1 1 0v1.293l.647-.647a.5.5 0 1 1 .707.708L8.5 3.207v3.927l3.4-1.963.496-1.85a.5.5 0 1 1 .966.26l-.236.882 1.12-.646a.5.5 0 0 1 .5.866l-1.12.646.883.237a.5.5 0 1 1-.26.966l-1.848-.495L9 8l3.4 1.963 1.849-.495a.5.5 0 0 1 .259.966l-.883.237 1.12.646a.5.5 0 0 1-.5.866l-1.12-.646.236.883a.5.5 0 1 1-.966.258l-.495-1.849-3.4-1.963v3.927l1.353 1.353a.5.5 0 0 1-.707.708l-.647-.647V15.5a.5.5 0 0 1-.5.5z"/>
+                  </svg>
+                <p>에어컨</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 한국의 다른 근사한 휴가 숙소 -->
+
+      <section class="mt-5">
+        <div class="container">
+          <div>
+            <h1>한국의 다른 근사한 휴가 숙소</h1>
+          </div>
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+            <div class="card mb-3 col border-0">       
+              <div class="card-img-top">
+                <p class="position-absolute bg-white rounded-2 m-2 p-1">슈퍼호스트</p>
+                <img class="img-fluid rounded-3" src="https://a0.muscache.com/im/pictures/57715e53-f41c-4881-b3dc-2c7620c057fa.jpg?im_w=720" alt="">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">                
+                  <div class="d-flex justify-content-between">
+                  <strong>수영구의 레지던스</strong>
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg> 5 (122)
+                  </span>
+                </div></h5>
+                <p class="card-text">무제_제목없을용기</p>
+              </div>
+            </div>
+
+            <div class="card mb-3 col border-0">       
+              <div class="card-img-top">
+                <p class="position-absolute bg-white rounded-2 m-2 p-1">슈퍼호스트</p>
+                <img class="img-fluid rounded-3" style="object-fit: cover;" src="https://a0.muscache.com/im/pictures/2b526bbb-0461-46cd-8b89-68cb4a251475.jpg?im_w=720" alt="">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">                
+                  <div class="d-flex justify-content-between">
+                  <strong>종로구의 집</strong>
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg> 4.93 (80)
+                  </span>
+                </div></h5>
+                <p class="card-text">[aboheon / 아보헌] 안국역 도보 10분 독채 한옥 스테이</p>
+              </div>
+            </div>
+
+            <div class="card mb-3 col border-0">       
+              <div class="card-img-top">
+                <p class="position-absolute bg-white rounded-2 m-2 p-1">슈퍼호스트</p>
+                <img class="img-fluid rounded-3" src="https://a0.muscache.com/im/pictures/3581a7b8-9aa3-473c-a487-948a8cb0e5b2.jpg?im_w=720" alt="">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">                
+                  <div class="d-flex justify-content-between">
+                  <strong>마포구의 공동 주택</strong>
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg> 4.84 (265)
+                  </span>
+                </div></h5>
+                <p class="card-text">JSERENITY F</p>
+              </div>
+            </div>
+
+            <div class="card mb-3 col border-0">       
+              <div class="card-img-top">
+                <p class="position-absolute bg-white rounded-2 m-2 p-1">슈퍼호스트</p>
+                <img class="img-fluid rounded-3" src="https://a0.muscache.com/im/pictures/29a7f7d1-4daa-4b61-8e76-1228e81e0ed5.jpg?im_w=720" alt="">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">                
+                  <div class="d-flex justify-content-between">
+                  <strong>보성군의 전원주택</strong>
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg> 4.82 (210)
+                  </span>
+                </div></h5>
+                <p class="card-text">옛 정취를 물씬 느낄 수 있는 명품 고택!</p>
+              </div>
+            </div>
+
+            <div class="card mb-3 col border-0">       
+              <div class="card-img-top">
+                <p class="position-absolute bg-white rounded-2 m-2 p-1">슈퍼호스트</p>
+                <img class="img-fluid rounded-3" src="https://a0.muscache.com/im/pictures/16eac73c-1457-446d-9aed-ea4301ff520c.jpg?im_w=720" alt="">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">                
+                  <div class="d-flex justify-content-between">
+                  <strong>종로구의 개인실</strong>
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg> 4.95 (174)
+                  </span>
+                </div></h5>
+                <p class="card-text">spa#2 _Analog_Hanok_북촌</p>
+              </div>
+            </div>
+
+            <div class="card mb-3 col border-0">       
+              <div class="card-img-top">
+                <p class="position-absolute bg-white rounded-2 m-2 p-1">슈퍼호스트</p>
+                <img class="img-fluid rounded-3" src="https://a0.muscache.com/im/pictures/f73781e9-ce80-41c0-8d7d-50e9486b9292.jpg?im_w=720" alt="">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">                
+                  <div class="d-flex justify-content-between">
+                  <strong>홍천군의 집</strong>
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg> 4.89 (100)
+                  </span>
+                </div></h5>
+                <p class="card-text">NEW 스테이구구(Stay GUGU) 302호</p>
+              </div>
+            </div>
+
+            <div class="card mb-3 col border-0">       
+              <div class="card-img-top">
+                <p class="position-absolute bg-white rounded-2 m-2 p-1">슈퍼호스트</p>
+                <img class="img-fluid rounded-3" src="https://a0.muscache.com/im/pictures/miso/Hosting-768501668140224682/original/e3f22391-a19a-4d60-a993-e323853ae5d1.jpeg?im_w=720" alt="">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">                
+                  <div class="d-flex justify-content-between">
+                  <strong>광주시의 집</strong>
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg> 5 (31)
+                  </span>
+                </div></h5>
+                <p class="card-text">스테이 쉼</p>
+              </div>
+            </div>
+
+            <div class="card mb-3 col border-0">       
+              <div class="card-img-top">
+                <p class="position-absolute bg-white rounded-2 m-2 p-1">슈퍼호스트</p>
+                <img class="img-fluid rounded-3" src="https://a0.muscache.com/im/pictures/miso/Hosting-48844349/original/84e676cb-619e-4972-aeaa-5eec2611bfe4.jpeg?im_w=720" alt="">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">                
+                  <div class="d-flex justify-content-between">
+                  <strong>용인시의 캠핑장</strong>
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg> 4.91 (204)
+                  </span>
+                </div></h5>
+                <p class="card-text">[숲 뷰]_#인하우스글램핑_하루 단독 1팀(2인)_분당 20분</p>
+              </div>
+            </div>
+
+            <div class="card mb-3 col border-0">       
+              <div class="card-img-top">
+                <p class="position-absolute bg-white rounded-2 m-2 p-1">슈퍼호스트</p>
+                <img class="img-fluid rounded-3" src="https://a0.muscache.com/im/pictures/4c5c3078-d69c-4fcd-a7ce-4753439df03d.jpg?im_w=720" alt="">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">                
+                  <div class="d-flex justify-content-between">
+                  <strong>전주시 완산구의 게스트용 별채</strong>
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg> 4.84 (213)
+                  </span>
+                </div></h5>
+                <p class="card-text">전주 감성한옥 '라누이-블랑슈'</p>
+              </div>
+            </div>
+
+            <div class="card mb-3 col border-0">       
+              <div class="card-img-top">
+                <p class="position-absolute bg-white rounded-2 m-2 p-1">슈퍼호스트</p>
+                <img class="img-fluid rounded-3" src="https://a0.muscache.com/im/pictures/6275ce77-b67b-40ec-bad6-665d65c5a503.jpg?im_w=720" alt="">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">                
+                  <div class="d-flex justify-content-between">
+                  <strong>경주의 개인실</strong>
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg> 4.85 (27)
+                  </span>
+                </div></h5>
+                <p class="card-text">경주 포레스트 팬션 101호/감상팬션/야외자쿠지/불멍</p>
+              </div>
+            </div>
+
+            <div class="card mb-3 col border-0">       
+              <div class="card-img-top">
+                <p class="position-absolute bg-white rounded-2 m-2 p-1">슈퍼호스트</p>
+                <img class="img-fluid rounded-3" src="https://a0.muscache.com/im/pictures/miso/Hosting-631554907583106545/original/6112a585-4876-4c97-af7f-7cbcb0b6738d.jpeg?im_w=720" alt="">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">                
+                  <div class="d-flex justify-content-between">
+                  <strong>상면, 가평군의 텐트</strong>
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg> 4.87 (60)
+                  </span>
+                </div></h5>
+                <p class="card-text">글램핑G2동-불멍과 단독바베큐장, 개인샤워실이 있는 프리미엄 글램핑입니다</p>
+              </div>
+            </div>
+
+            <div class="card mb-3 col border-0">       
+              <div class="card-img-top">
+                <p class="position-absolute bg-white rounded-2 m-2 p-1">슈퍼호스트</p>
+                <img class="img-fluid rounded-3" src="https://a0.muscache.com/im/pictures/2d6fbbe0-558f-4ba7-8b93-e3a0dc117ec0.jpg?im_w=720" alt="">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">                
+                  <div class="d-flex justify-content-between">
+                  <strong>속초시의 게스트용 별채</strong>
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg> 4.93 (324)
+                  </span>
+                </div></h5>
+                <p class="card-text">해[海]요일/바다 보는 날/바다위에 누워 휴식/휴식이 필요한 날/</p>
+              </div>
+            </div>
+          </div>
+          <!-- 모두보기 버튼 -->
+          <div class="">
+            <a href="https://www.airbnb.co.kr/s/South-Korea/homes?place_id=ChIJm7oRy-tVZDURS9uIugCbJJE&refinement_paths%5B%5D=%2Fhomes" class="btn btn-outline-dark  " tabindex="-1" role="button">모두 보기 > </a>
+          </div>
+        </div>
+      </section>
+
+
+       <!--버튼  -->
+       
+      
+        <div class="container mt-5">
+        <p><a href="">에어비앤비</a> > 한국</p></div>
+    
+    </article>
+    <!-- 검색 시작하기 md 미만 -->
+    <div class="position-fixed container-fluid bottom-0 bg-white p-3 d-block d-lg-none" style="height: 4rem;">
+      <div class="d-grid gap-2">
+        <button class="btn bg-danger text-white" type="button">검색 시작하기</button>
+      </div>
+    </div>
+
+    <hr>
+    <!-- 푸터 -->
+    <footer>
+      <div class="container d-flex justify-content-between">
+        <p>© 2023 Airbnb, Inc. All rights reserved
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
+              <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+            </svg>
+            개인정보
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
+              <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+            </svg>
+            처리방침
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
+              <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+            </svg>
+            이용약관
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
+              <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+            </svg>
+            여행지 찾기
+        </p>
+        <p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+              <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+            </svg> 
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-twitter mx-2" viewBox="0 0 16 16">
+              <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+            </svg> 
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+              <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+            </svg>
+        </p>
+      </div>
+    </footer>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </article>
+</html>
