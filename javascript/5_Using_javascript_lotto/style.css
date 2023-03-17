@@ -1,0 +1,65 @@
+.bidbox{
+        width:30px;
+        height:30px;
+        color:white;        
+        border-radius:50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+
+.boxforbidbox {
+  width: 60%;
+}        
+
+.gray {
+  background-color: gray;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.red {
+  background-color: red;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.green  {
+  background-color: green;
+}
+
+.darkblue {
+  background-color: darkblue;
+}
+
+.black {
+  background-color: black;
+}
+
+.skyblue{
+    background-color:skyblue;
+}
+
+.crimson{
+    background-color:crimson;
+}
+
+.lightgray{
+    background-color: lightgray;
+}
+
+.fontgray{
+    color:gray;
+}
+
+.lightgreen{
+    background-color:lightgreen;
+}

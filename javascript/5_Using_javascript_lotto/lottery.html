@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="d-flex container mt-5 justify-content-center text-center " id="lottoheader"></div>
+  <div class="container text-center">
+
+    <div>
+      <h1 id="lotterynumber" class="d-none">11 23 25 30 32 40</h1>
+      <h1 id="bonusnumber" class="d-none">42</h1>
+      <div class="mt-3">
+        <button type="button" id="btn" class="btn btn-lg btn-primary">생성</button>
+        <button type="button" id="btnRemove" class="btn btn-lg btn-secondary">초기화</button>  
+      </div>
+    </div>
+    <div id="result" class="d-flex flex-column-reverse align-items-center">
+    </div> 
+  </div>
+
+
+  
+
+  <script>
+    // 1. 필요한 모든 요소 선택
+    const h1Tag = document.querySelector('h1')
+    const btn = document.querySelector('#btn')
+    const btnRemove = document.querySelector('#btnRemove')
+    const divTag = document.querySelector('div')
+    const headerTag=document.querySelector('#lottoheader')
+    const ulTag = document.createElement('ul')
+    const lotteryTag = document.querySelector('#lotterynumber')
+    const bonusTag = document.querySelector('#bonusnumber')
+    const lotteryArray = lotteryTag.textContent.split(' ')
+    const bonusStr = bonusTag.textContent
+    const divResult = document.querySelector('#result')
+    var result = ''
+
+    let lottoStr=lotteryArray.join()
+
+    //1-2 상당 헤더 당첨번호 작성  
+    let headertext = document.createElement('div')
+    headertext.textContent = '당첨 번호'
+    headerTag.appendChild(headertext)
+    lotteryArray.forEach((number) => {
+      const newDivNumber = document.createElement('div')
+      newDivNumber.textContent = number
+      if (Number(number) <= 20) {
+          newDivNumber.setAttribute('class', 'bidbox skyblue mx-1')
+          headerTag.appendChild(newDivNumber)
+      }else if(Number(number) <= 30) {
+          newDivNumber.setAttribute('class', 'bidbox crimson mx-1')
+          headerTag.appendChild(newDivNumber)
+      }else{
+          newDivNumber.setAttribute('class', 'bidbox lightgray mx-1')
+          headerTag.appendChild(newDivNumber)
+      }
+    })
+    //1-2-1 상단 헤더 보너스 번호 및 +
+    let plusdiv=document.createElement('div')
+    plusdiv.textContent = ' + '
+    plusdiv.setAttribute('class', 'fontgray mx-1')
+    headerTag.appendChild(plusdiv )
+
+    let bonusHeader = document.createElement('div')
+    bonusHeader.textContent = bonusStr
+    bonusHeader.setAttribute('class', 'bidbox lightgreen')
+    headerTag.appendChild(bonusHeader)
+    // 2. 버튼 요소의 이벤트 핸들러
+    btn.addEventListener('click', (event) => {
+      // 전체 구슬 담는 div
+      const newDiv = document.createElement('div')
+      newDiv.classList.add('d-flex', 'justify-content-between', 'mt-3', 'boxforbidbox')
+      divResult.appendChild(newDiv)
+      
+      const numbers = _.range(1, 46)
+      numbersSelected = _.sampleSize(numbers, 6)
+      console.log(numbersSelected)
+      let selectedStr=numbersSelected.join()
+      let counter = 0
+      numbersSelected.forEach((number) => {
+        // 구슬 담는 div에 추천 번호 담기
+        const newDivNumber = document.createElement('div')
+        newDivNumber.textContent = number
+        newDivNumber.setAttribute('class', 'bidbox gray')
+        newDiv.appendChild(newDivNumber)
+
+        // 당첨 여부 확인
+        if (lotteryArray.includes(number.toString())){
+          counter += 1
+          newDivNumber.setAttribute('class', 'bidbox blue')
+          
+        }
+      })
+
+      // 당첨 개수(등수) 확인 
+      if (counter === 6) {
+        //  let result = '1등'
+        var result = '1등'
+        const newDivResult = document.createElement('div')
+        newDivResult.textContent = result
+        newDivResult.setAttribute('class', 'bidbox red')
+        newDiv.appendChild(newDivResult)
+      } else if (counter === 5) {
+        if (numbersSelected.includes(Number(bonusStr))) {
+          // let result = '2등'
+          var result = '2등'
+          const newDivResult = document.createElement('div')
+          newDivResult.textContent = result
+          newDivResult.setAttribute('class', 'bidbox orange')
+          newDiv.appendChild(newDivResult)
+        } else {
+          // let result = '3등'
+          var result = '3등'
+          const newDivResult = document.createElement('div')
+          newDivResult.textContent = result
+          newDivResult.setAttribute('class', 'bidbox yellow')
+          newDiv.appendChild(newDivResult)
+        }
+      } else if (counter === 4) {
+        // let result = '4등'
+        var result = '4등'
+        const newDivResult = document.createElement('div')
+        newDivResult.textContent = result
+        newDivResult.setAttribute('class', 'bidbox green')
+        newDiv.appendChild(newDivResult)
+      } else if (counter === 3) {
+      //   let result = '5등'\
+        var result = '5등'
+        const newDivResult = document.createElement('div')
+        newDivResult.textContent = result
+        newDivResult.setAttribute('class', 'bidbox darkblue')
+        newDiv.appendChild(newDivResult)
+      } else {
+      //   let result = '꽝'
+      var result = '꽝'
+      const newDivResult = document.createElement('div')
+      newDivResult.textContent = result
+      newDivResult.setAttribute('class', 'bidbox black')
+      newDiv.appendChild(newDivResult)
+      }
+
+    // 3. 초기화 버튼 - 추가 요소 
+    btnRemove.addEventListener('click', (event) => {
+      divResult.replaceChildren()
+    })
+    
+    // 전체 결과 console.log 출력
+    let lottotext = `당첨 번호: ${lottoStr} 보너스 번호: ${bonusStr} 랜덤 번호: ${selectedStr} 등수 : ${result}`
+    console.log(lottotext)
+    })
+
+  </script>
+    <script src="
+    https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js
+    "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+
+</html>
