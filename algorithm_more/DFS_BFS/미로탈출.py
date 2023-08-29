@@ -21,5 +21,5 @@ def bfs(x,y):
             if maze[nx][ny]==1:
                 maze[nx][ny]=maze[x][y]+1
                 queue.append((nx,ny))
-    return maze[n-1][m-1]
+    return maze
 print(bfs(0,0))
