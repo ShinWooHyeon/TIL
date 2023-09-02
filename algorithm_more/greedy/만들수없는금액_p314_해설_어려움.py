@@ -5,6 +5,7 @@ coinlist=list(map(int,input().split()))
 coinlist.sort()
 
 target=1
+# 각 단계에서 동전을 확인할 때마다 자기자신까지 만들 수 있고 자기자신이 동전이 있으므로 최대 자기자신+동전이 target이 되는 것이다 
 for i in coinlist:
     if target < i :
         break
