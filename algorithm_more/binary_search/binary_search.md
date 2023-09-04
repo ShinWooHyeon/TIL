@@ -83,3 +83,15 @@ else:
 ## 데이터가 너무 길 경우 빠르게 입력받기
 - 데이터의 개수가 많은 경우 input()함수를 쓰면 동작속도가 느린 문제가 발생한다. sys 의 stdin.readline() 함수를 사용한다
 - rstrip()함수를 통해 줄 바꿈 기호를 없애줘야 한다. 
+
+## 이진탐색 라이브러리 - bisect
+- bisect_left (a, x) : 정렬된 순서를 유지하면서 리스트 a에 데이터 x를 삽입 할 시, 가장 왼쪽 인덱스
+- bisect_right(a, x) : 정렬된 순서를 유지하면서 리스트 a에 데이터 x를 삽입 할 시, 가장 오른쪽 인덱스 
+- 정렬된 리스트에서 값이 특정 범위에 속하는 원소의 개수 
+``` python
+from bisect import bisect_right, bisect_left
+def count_by_range(a, left_value, right_value):
+    right_index = bisect_right(a, right_value)
+    left_index = bisect_left(b, left_value)
+    return right_index - left_index
+```
