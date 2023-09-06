@@ -7,7 +7,7 @@ def solution(food_times, k):
     
     # 시간이 작은 음식부터 빼야한다
     q=[]
-    for i in range(len(food_times)):
+    for i in range(len(food_times)):    
         heapq.heappush(q, (food_times[i],i+1))
     
     sum_value = 0 # 먹기 위해 사용한 시간
