@@ -105,7 +105,7 @@ def union_parent(parent, a, b):
         parent[b] = a
     else:
         parent[a] = b
-
+    
 # 노드의 개수와 간선 개수(union 연산 개수) 입력받기
 v, e = map(int,input().split())
 parent=[0] * (v+1) #부모테이블을 일단 다 0으로 만들고

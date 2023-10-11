@@ -5,11 +5,9 @@ n = int(input())
 data= list(map(int,input().split()))
 # 각 연산자의 개수
 add, sub, mul, div = map(int, input().split())
-
 # 최솟값과 최댓값 초기화
 min_value= 1e9
 max_value= -1e9
-
 # dfs 메서드로 i는 연산횟수 기록 1부터 시작하는이유는 n-1번의 개수를 실행 
 def dfs(i, now):
     global min_value, max_value, add, sub, mul, div
@@ -38,7 +36,6 @@ def dfs(i, now):
             div -= 1
             dfs( i+1, int(now/ data[i] ) )
             div += 1 
-
 # dfs 호출
 dfs(1, data[0])
 print(max_value)
